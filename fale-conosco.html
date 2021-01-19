@@ -1,0 +1,128 @@
+<!--Google Glass
+A revolução do Google está chegando
+
+[AQUI ENTRA UMA FOTO]-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Glasses</title>
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
+    <link rel="stylesheet" type="text/css" href="_css/form.css"/>
+    <script>
+        function calc_total(){
+            var qtd = parseInt(document.getElementById('cQtd').value);
+            tot = qtd * 1500;
+            document.getElementById('cTot').value = tot;
+        }
+    </script>
+
+</head>
+<script language="javascript" src="_javascript/funcoes.js"></script>
+<body>
+    <div id="interface">
+ <br di="interface">   
+ <header id="cabecalho">   
+ <hgroup>    
+<h1>Google Glass</h1>
+<h2>A revolução do Google está chegando</h2>
+</hgroup>
+
+<!-- Para incluir a formatação da foto no grupo de formatação
+
+<figure class="foto-legenda"> -->
+
+    <img id="icone" src="_imagens/contato.png"/>
+    
+
+ <nav id="menu">
+<h1> Menu Principal</h1>
+   <ul> 
+ <li onmouseover="mudafoto('_imagens/home.png')" onmouseout="mudafoto('_imagens/contato.png')"><a href="index.html">Home</a></li>
+<li onmouseover="mudafoto('_imagens/especificacoes.png')" onmouseout="mudafoto('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+<li onmouseover="mudafoto('_imagens/fotos.png')" onmouseout="mudafoto('_imagens/contato.png')"><a href="fotos.html"> Fotos</a></li> 
+<li onmouseover="mudafoto('_imagens/multimidia.png')" onmouseout="mudafoto('_imagens/contato.png')"><a href="multimidia.html"> Multimídia</a></li> 
+<li onmouseover="mudafoto('_imagens/contato.png')" onmouseout="mudafoto('_imagens/contato.png')"><a href="fale-conosco.html"> Fale conosco</a></li> 
+   </ul>
+</nav>
+</header> 
+
+<hgroup>
+    <h3>Conosco &nbsp; > &nbsp; Contato</h3> 
+    <h1>Formulário de Contato</h1>
+    <h2>por Peterson Rodrigues dos Santos</h2>  
+    <h3 class="direita">Atualizado em 14/01/2021</h3> 
+    </hgroup>
+    </header> 
+<form method="POST" action="" oninput="calc_total();">
+    <fieldset id="usuario"><legend>Identificação do Usuário</legend>
+   <p><label for="cNome">Nome:</label>  <input type="text" name="tNome" id="cNome" placeholder="nome completo" size="50" maxlength="50"></p> 
+   <p><label for="cSenha">Senha:</label><input type="password" name="tSenha" id="cSenha" placeholder="10 dígito" size="10" maxlength="10"></p>
+   <p><label for="cEmail">E-mail:</label><input type="email" name="tEmail" id="cEmail" placeholder="dígite o seu email" size="30" maxlength="30"> </p>
+
+    <fieldset id="sexo"><legend>Sexo</legend>
+        <p><input type="radio" name="tSexo" id="cMasc"/> <label for="cMasc"> Masculino</label> </p> 
+        <p> <input type="radio" name="tSexo" id="cFem"/> <label for="cFem"> Feminino</label></p></fieldset>
+   <p><label for="cNasc"> Data de Nascimento:</label><input type="date" name="cNasc" id="cNasc"> </p> 
+</fieldset>
+
+<fieldset id="endereco"><legend>Endereço do Usuário</legend> 
+   <p><label for="cRua">Logradouro:</label><input  type="text" name="tRua" id="cRua" placeholder="rua, av, trav, ..." size="13"></p> 
+   <p><label for="cNum"> Número:</label><input type="number" name="tNum" id="cNum" min="0" max="99999"></p>
+   
+   <label for="cEst">Estado:</label> 
+   <select name="tEst" id="cEst">
+       <optgroup label="Região Sudeste">
+       <option value="RJ">Rio de Janeiro</option>
+       <option value="SP" selected>São Paulo</option> 
+       <option value="MG">Minas gerais</option>
+    </optgroup>
+
+    <optgroup label="Região Sul">
+    <option value="PR">Paraná</option>
+    <option value="SC">Santa Catarina</option>
+    <option value="RS">Rio Grande do Sul</option>
+   </optgroup> 
+    </select> <br> <br>
+
+   <label for="cCid"> Cidade: <input type="text" name="tCid" id="cCid" list="cidades" placeholder="dígite a sua cidade"></label>
+   <datalist id="cidades">
+   <option value="Rio de Janeiro"></option>
+   <option value="Nova Iguaçu"></option>
+   <option value="Niterói"></option>
+   <option value="belford Roxo"></option>
+   </datalist>
+</fieldset>
+
+<fieldset id="mensagem"><legend>Mensagem do Usuário</legend> 
+ <p><label for="cUrg"></label>  Grau de Urgência:
+ Mín<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="5">Max </p>
+ <p><label for="cMsg">Mensagem:</label></p> 
+ <textarea name="tMsg" id="cMsg" cols="30" rows="5" placeholder="dígite a sua mensagem"></textarea> 
+</fieldset>
+
+<fieldset id="pedido"><legend>Quero um Google Glass</legend> 
+  <P> <input type="checkbox" name="tPed" id="cPed" checked> 
+    <label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label></P> 
+  <label for="cCor">Cor:</label><input type="color" name="tCor" id="cCor" value="blue"> <br> <br>
+  <label for="cQtd">Quantidade:</label><input type="number" name="tQtd" id="cQtd" min="0" max="10" value="0"> <br>  <br>
+  <label for="cTot"> Preço Total: R$ </label><input type="text" name="tTot" id="cTot" placeholder="total a pagar" readonly> &nbsp;
+  <input type="submit" value=Enviar>
+</fieldset>
+<input type="image" name="tEnviar" src="_imagens/botao-enviar.png">
+
+</form>
+
+<footer id="rodape">
+    <foother id="a">
+        <p><b>Copyright 2020 - by Peterson Rodrigues</b> <br/> <br/>
+<a href=https://pt-br.facebook.com/login/ target="_blank">Facebook </a>| 
+<a href=https://twitter.com/login?lang=pt" target="_blank">Twitter</a><br/> <br/>
+
+<a href="https://www.youtube.com/watch?v=92TEcszkRBw" target="_blank">opening Bleach</a></p> 
+</div>
+</body>
+</html>
+</footer>
